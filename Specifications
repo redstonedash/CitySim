@@ -1,0 +1,50 @@
+
+1 : Create Sapous
+
+Sapous has : Location x Brain
+Location = (x, y, z) :: (Ordinate, Ordinate, Ordinate)
+
+------------------------------------------------------
+
+Given
+- Sapous
+- World
+When
+- Sapous requests position change to valid tile.
+Then
+- Sapous position updates.
+- Sapous position in world updates.
+
+Given
+- Sapous
+- World
+When
+- Sapous requests position change to invalid tile.
+Then
+- Sapous position doesn't update.
+- Sapous position in world doesn't updates.
+
+-----------------------------------------------------
+
+World = [Item]
+world.moveCreature :: Coordinate x Direction -> IO Bool
+-- side-effect = creature position in world updates.
+
+----------------------------------------------------
+
+-- add move requests to stack : priority queque?
+-- event stack
+-- event completed in certain amount of time
+
+
+------------------------------------------------------
+
+
+2 : World
+
+Brain -- Determines actions of characters
+Vision : World -> Area
+
+
+
+
