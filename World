@@ -26,6 +26,21 @@ public class Grid<T>
 				this.grid[w, h] = def_value;
 	}
 	
+	public int Area ()
+	{
+		return this.Width() * this.Height();
+	}
+	
+	public int Height ()
+	{
+		return this.grid.GetLength(1);
+	}
+	
+	public int Width ()
+	{
+		return this.grid.GetLength(0);
+	}
+	
 	public T Read (Point point)
 	{
 		return this.grid[point.X, point.Y];
