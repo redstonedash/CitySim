@@ -9,7 +9,8 @@ public class Grid<T>
 		
 		for (var w = 0; w < width; w++)
 			for (var h = 0; h < height; h++)
-				this.grid[w, h] = filler;
+				for (var d = 0; d < depth; d++)
+					this.grid[w, h, d] = filler;
 	}
 	
 	public int Depth ()
