@@ -1,8 +1,4 @@
 
-// todo : find typedef equivalent.
-// public class World : Grid<T>
-// {}
-
 public class Grid<T>
 {
 	private T[,,] grid;
@@ -11,20 +7,9 @@ public class Grid<T>
 	{
 		this.grid   = new T[width, height, depth];
 		
-		// fill grid with default
 		for (var w = 0; w < width; w++)
 			for (var h = 0; h < height; h++)
 				this.grid[w, h] = filler;
-	}
-	
-	public int Volume ()
-	{
-		return this.Width() * this.Height() * this.Depth();
-	}
-	
-	public int Area ()
-	{
-		return this.Width() * this.Height();
 	}
 	
 	public int Depth ()
@@ -34,21 +19,21 @@ public class Grid<T>
 	
 	public int Height ()
 	{
-		return this.grid.GetLength(1);
+		return grid.GetLength(1);
 	}
 	
 	public int Width ()
 	{
-		return this.grid.GetLength(0);
+		return grid.GetLength(0);
 	}
 	
-	public T Read (int x, int y)
+	public T Read (int x, int y, int z)
 	{
-		return this.grid[x, y];
+		return this.grid[x, y, z];
 	}
 	
-	public void Write (int x, int y, T val)
+	public void Write (int x, int y, int z, T val)
 	{
-		this.grid[x, y] = val;
+		this.grid[x, y, z] = val;
 	}
 }
