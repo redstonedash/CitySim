@@ -17,6 +17,11 @@ public class Grid<T>
 				this.grid[w, h] = filler;
 	}
 	
+	public int Volume ()
+	{
+		return this.Width() * this.Height() * this.Depth();
+	}
+	
 	public int Area ()
 	{
 		return this.Width() * this.Height();
