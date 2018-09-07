@@ -10,15 +10,10 @@ Point.Y
 public class Grid<T>
 {
 	private T[,] grid;
-	private int width;
-	private int height;
 	
 	public Grid (int width, int height, T def_value)
 	{
 		this.grid   = new T[width, height];
-		
-		this.width  = grid.GetLength(0);
-		this.height = grid.GetLength(1);
 		
 		// fill grid with default
 		for (var w = 0; w < width; w++)
