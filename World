@@ -1,5 +1,11 @@
 
-using System.Drawing; // using : Point data-structure
+using System.Drawing;
+/* Behvaiors *
+
+new Point(x, y)
+Point.X
+Point.Y
+*/
 
 public class Grid<T>
 {
