@@ -1,12 +1,4 @@
 
-using System.Drawing;
-/* Behvaiors *
-
-new Point(x, y)
-Point.X
-Point.Y
-*/
-
 public class Grid<T>
 {
 	private T[,] grid;
@@ -36,19 +28,9 @@ public class Grid<T>
 		return this.grid.GetLength(0);
 	}
 	
-	public T Read (Point point)
-	{
-		return this.grid[point.X, point.Y];
-	}
-	
 	public T Read (int x, int y)
 	{
 		return this.grid[x, y];
-	}
-	
-	public void Write (Point point, T val)
-	{
-		this.grid[point.X, point.Y] = val;
 	}
 	
 	public void Write (int x, int y, T val)
