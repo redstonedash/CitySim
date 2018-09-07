@@ -1,15 +1,15 @@
 
-public class Grid<T>
+public class World<T>
 {
-	private T[,,] grid;
+	private T[,,] world;
 	
-	public Grid (int width, int height, int depth, T filler)
+	public World (int width, int height, int depth, T filler)
 	{
-		this.grid = new T[width, height, depth];
+		this.world = new T[width, height, depth];
 		this.Fill(filler);
 	}
 	
-	private void Fill ( T filler )
+	private void Fill (T filler)
 	{
 		for (var x = 0; x < Width(); x++)
 		for (var y = 0; y < Height(); y++)
@@ -19,26 +19,26 @@ public class Grid<T>
 	
 	public int Depth ()
 	{
-		return this.grid.GetLength(2);
+		return this.world.GetLength(2);
 	}
 	
 	public int Height ()
 	{
-		return this.grid.GetLength(1);
+		return this.world.GetLength(1);
 	}
 	
 	public int Width ()
 	{
-		return this.grid.GetLength(0);
+		return this.world.GetLength(0);
 	}
 	
 	public T Read (int x, int y, int z)
 	{
-		return this.grid[x, y, z];
+		return this.world[x, y, z];
 	}
 	
 	public void Write (int x, int y, int z, T val)
 	{
-		this.grid[x, y, z] = val;
+		this.world[x, y, z] = val;
 	}
 }
