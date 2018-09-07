@@ -24,12 +24,12 @@ public class Grid<T>
 	
 	public int Height ()
 	{
-		return grid.GetLength(1);
+		return this.grid.GetLength(1);
 	}
 	
 	public int Width ()
 	{
-		return grid.GetLength(0);
+		return this.grid.GetLength(0);
 	}
 	
 	public T Read (int x, int y, int z)
