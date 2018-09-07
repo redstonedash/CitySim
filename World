@@ -1,4 +1,7 @@
 
+public class World : Grid<T>
+{}
+
 public class Grid<T>
 {
 	private T[,] grid;
