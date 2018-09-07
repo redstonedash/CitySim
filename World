@@ -26,13 +26,23 @@ public class Grid<T>
 				this.grid[w, h] = def_value;
 	}
 	
-	public T Read (Point point) // exceptions: Out of Bounds
+	public T Read (Point point)
 	{
 		return this.grid[point.X, point.Y];
 	}
 	
-	public void Write (Point point, T val) // exceptions: Out of Bounds
+	public T Read (int x, int y)
+	{
+		return this.grid[x, y];
+	}
+	
+	public void Write (Point point, T val)
 	{
 		this.grid[point.X, point.Y] = val;
+	}
+	
+	public void Write (int x, int y, T val)
+	{
+		this.grid[x, y] = val;
 	}
 }
