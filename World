@@ -12,9 +12,9 @@ public class Grid<T>
 	private void Fill ( T filler )
 	{
 		for (var x = 0; x < Width(); x++)
-			for (var y = 0; y < Height(); y++)
-				for (var z = 0; z < Depth(); z++)
-					this.grid[x, y, z] = filler;
+		for (var y = 0; y < Height(); y++)
+		for (var z = 0; z < Depth(); z++)
+			Write(x, y, z, filler);
 	}
 	
 	public int Depth ()
