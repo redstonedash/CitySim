@@ -9,8 +9,6 @@ public class World<T>
 		this.Fill(filler);
 	}
 	
-	// Single-use function // Consider making public
-	
 	private void Fill (T filler)
 	{
 		for (var x = 0; x < Width(); x++)
