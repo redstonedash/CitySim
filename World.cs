@@ -66,3 +66,8 @@ public class World<T>
 		this.world[x, y, z] = val;
 	}
 }
+
+public class TestWorld<T>
+{
+
+}
