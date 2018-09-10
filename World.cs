@@ -67,7 +67,20 @@ public class World<T>
 	}
 }
 
+[TestClass]
 public class TestWorld<T>
 {
-
+	[TestMethod]
+	public void World_Dimensions_Equal_Constructor_Dimension_Arguments ()
+	{
+		const int width  = 1;
+		const int height = 1;
+		const int depth  = 1;
+		
+		World<int> world = new World (width, height, depth);
+		
+		Assert.AreEqual (world.Width() , width );
+		Assert.AreEqual (world.Height(), height);
+		Assert.AreEqual (world.Depth() , depth );
+	}
 }
