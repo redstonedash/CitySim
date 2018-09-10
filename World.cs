@@ -70,17 +70,29 @@ public class World<T>
 [TestClass]
 public class TestWorld<T>
 {
+	const int width  = 2;
+	const int height = 3;
+	const int depth  = 5;
+	const int filler = 7;
+	
 	[TestMethod]
 	public void World_Dimensions_Equal_Constructor_Dimension_Arguments ()
 	{
-		const int width  = 1;
-		const int height = 1;
-		const int depth  = 1;
-		
-		World<int> world = new World (width, height, depth);
+		World<int> world = new World (width, height, depth, filler);
 		
 		Assert.AreEqual (world.Width() , width );
 		Assert.AreEqual (world.Height(), height);
 		Assert.AreEqual (world.Depth() , depth );
+	}
+	
+	[TestMethod]
+	public void New_World_Only_Contains_Filler ()
+	{
+		World<int> world = new World (width, height, depth, filler);
+		
+		for (var x = 0; x < width ; x++)
+		for (var y = 0; y < height; y++)
+		for (var z = 0; z < depth ; z++)
+			Assert.AreEqual (world.Read (x, y, z), filler);
 	}
 }
