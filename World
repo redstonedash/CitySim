@@ -1,0 +1,50 @@
+
+public class World<T>
+{
+	private T[,,] world;
+	
+	public World (int width, int height, int depth, T filler)
+	{
+		this.world = new T[width, height, depth];
+		this.Fill(filler);
+	}
+	
+	// Single-use function // Consider making public
+	
+	private void Fill (T filler)
+	{
+		for (var x = 0; x < Width(); x++)
+		for (var y = 0; y < Height(); y++)
+		for (var z = 0; z < Depth(); z++)
+			Write(x, y, z, filler);
+	}
+	
+	// Dimensions
+	
+	public int Depth ()
+	{
+		return this.world.GetLength(2);
+	}
+	
+	public int Height ()
+	{
+		return this.world.GetLength(1);
+	}
+	
+	public int Width ()
+	{
+		return this.world.GetLength(0);
+	}
+	
+	// Side-effects
+	
+	public T Read (int x, int y, int z)
+	{
+		return this.world[x, y, z];
+	}
+	
+	public void Write (int x, int y, int z, T val)
+	{
+		this.world[x, y, z] = val;
+	}
+}
