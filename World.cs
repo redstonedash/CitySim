@@ -27,7 +27,7 @@ public class World<T>
 		var width  = x1 - x0 + 1;
 		var height = y1 - y0 + 1;
 		var depth  = z1 - z0 + 1;
-		World<T> area = new Area (width, height, depth);
+		World<T> area = new World<T> (width, height, depth);
 		
 		for (var x = x0; x <= x1; x++)
 		for (var y = y0; y <= y1; y++)
