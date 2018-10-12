@@ -65,4 +65,11 @@ public class World<T>
 	{
 		this.world[x, y, z] = val;
 	}
+	
+	// Enumerator
+	public IEnumerator<T> GetEnumerator()
+	{
+		foreach(var tile in world)
+			yield return tile;
+	}
 }
